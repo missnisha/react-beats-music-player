@@ -1,18 +1,38 @@
-import React, { useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faAngleLeft, faAngleRight, faPause,
-    faVolumeDown, } from '@fortawesome/free-solid-svg-icons'
+   } from '@fortawesome/free-solid-svg-icons'
 import { playAudio } from '../util'
 
 
 const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, songInfo, setSongInfo, songs, setCurrentSong, setSongs}) => {
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
+    //     // adding active state everytime we change the current song
+    //     const newSong = songs.map((song) => {
+    //         if(song.id === currentSong.id) {
+    //             return {
+    //                 ...song, //spread everything in song to access active
+    //                 active: true,
+    //             }
+    //         } else {
+    //             return {
+    //                 ...song,
+    //                 active: false,
+    //             }
+    //         }
+    //     })
+    //     setSongs(newSong)
+
+    // }, [currentSong])
+
+
+//Avoid re rendering the state with the function instead of useEffect
+   const activeLibraryHandler = (nextPrev) => {
         // adding active state everytime we change the current song
         const newSong = songs.map((song) => {
-            if(song.id === currentSong.id) {
+            if(song.id === nextPrev.id) {
                 return {
                     ...song, //spread everything in song to access active
                     active: true,
@@ -25,25 +45,26 @@ const Player = ({ audioRef, currentSong, isPlaying, setIsPlaying, songInfo, setS
             }
         })
         setSongs(newSong)
+    }
 
-    }, [currentSong])
-
-  const skipTrackHandler = (direction) => {
+  const skipTrackHandler = async (direction) => {
      let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
      if (direction === "skip-forward") {
-         setCurrentSong(songs[(currentIndex + 1) % songs.length]  );
+         await setCurrentSong(songs[(currentIndex + 1) % songs.length] );
+         activeLibraryHandler(songs[(currentIndex + 1) % songs.length] );
      }
      if (direction === "skip-back") {
 
         //check first if the index is -1
          if ((currentIndex - 1) % songs.length === -1) {
-            setCurrentSong(songs[songs.length -1]  ); //returns X songs and beign an array sets the song to the last one
-            playAudio(isPlaying, audioRef)
+         await setCurrentSong(songs[songs.length -1]); //returns X songs and beign an array sets the song to the last one
+         activeLibraryHandler(songs[songs.length -1])
             return; // we add return to avoid get the line 21 executed
          }
-        setCurrentSong(songs[(currentIndex - 1) % songs.length]  );
+       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+       activeLibraryHandler(songs[(currentIndex - 1) % songs.length]);
     }
-  
+    if (isPlaying) audioRef.current.play();
   }
     
     const playSongHandler = () => {

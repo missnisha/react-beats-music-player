@@ -7,11 +7,18 @@ nav {
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0.6rem 1.5rem;
+      border-radius: 4px;
       border: 2px solid rgb(65, 65, 65);
       transition: all 0.3s ease;
+      p{
+        font-size: 1.2rem;
+      }
+     svg {
+      margin-left: 5px;
+      }
       &:hover {
-        background: rgb(200, 191, 253);
+        background:rgb(65, 65, 65); // #f6e1ff;
         color: white;
       }
     }
@@ -24,7 +31,7 @@ nav {
   @media screen and (max-width: 768px) {
     nav {
       button {
-        z-index: 10;
+        z-index: 1;
       }
     }
   }

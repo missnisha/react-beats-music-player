@@ -3,20 +3,20 @@ import { playAudio } from '../util';
 
 const LibrarySong = ({ song , songs, setCurrentSong, audioRef, audio, isPlaying, setSongs}) => {
 
-    const songSelectHandler = () => {
+    const songSelectHandler = async () => {
         const selectedSong = songs.filter((songFromState) => songFromState.id === song.id);
         //filters return array with just 1 element so we need to access to this element with [0]
         const id = selectedSong[0].id
         // console.log(id)
         // console.log(selectedSong)
-        setCurrentSong(selectedSong[0])
+        await setCurrentSong(selectedSong[0])
        
         // setCurrentSong(song)
         // console.log(song)
         //changing active state
         
 
-        playAudio(isPlaying, audioRef)
+        if (isPlaying) audioRef.current.play();
 
         }
 
