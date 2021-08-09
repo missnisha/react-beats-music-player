@@ -14,8 +14,8 @@ const Nav = ({ setLibraryStatus, libraryStatus }) => {
         className={libraryStatus ? "library-active" : ""}
         onClick={openLibraryHandler}
       >
-        PlayList
-        <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon>
+        {libraryStatus === false ? "PlayList" : "Close"  }
+        {libraryStatus === false ? <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon> : ""}
       </button>
     </nav>
   );
