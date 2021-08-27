@@ -3,35 +3,40 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: all 0.3 ease;
     button {
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 0.6rem 1.5rem;
-      border-radius: 4px;
-      border: 2px solid rgb(65, 65, 65);
+      padding: 0.8rem 1.5rem;
+      border-radius: 45px;
+      border: 2px solid #ddd;
       transition: all 0.3s ease;
+      font-size: 1rem;
       p{
         font-size: 1.2rem;
       }
      svg {
       margin-left: 5px;
       }
-      &:hover {
-        background:rgb(65, 65, 65); // #f6e1ff;
-        color: white;
-      }
+    
     }
     .library-active {
-      background: rgb(65, 65, 65);
+      background: rgb(70, 69, 69);
       color: white;
+      border: none;
     }
   }
   
   @media screen and (max-width: 768px) {
+    body  {
+      overflow: hidden;
+    }
     nav {
+    
       button {
-        z-index: 1;
+        z-index: 2;
+       
       }
     }
   }
