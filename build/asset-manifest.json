@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/react-beats-music-player/static/css/main.2e4c8ac0.chunk.css",
-    "main.js": "/react-beats-music-player/static/js/main.88afef8c.chunk.js",
-    "main.js.map": "/react-beats-music-player/static/js/main.88afef8c.chunk.js.map",
-    "runtime-main.js": "/react-beats-music-player/static/js/runtime-main.26b909fe.js",
-    "runtime-main.js.map": "/react-beats-music-player/static/js/runtime-main.26b909fe.js.map",
-    "static/js/2.024054a7.chunk.js": "/react-beats-music-player/static/js/2.024054a7.chunk.js",
-    "static/js/2.024054a7.chunk.js.map": "/react-beats-music-player/static/js/2.024054a7.chunk.js.map",
-    "static/js/3.c7226a4c.chunk.js": "/react-beats-music-player/static/js/3.c7226a4c.chunk.js",
-    "static/js/3.c7226a4c.chunk.js.map": "/react-beats-music-player/static/js/3.c7226a4c.chunk.js.map",
+    "main.js": "/react-beats-music-player/static/js/main.d8fa943a.chunk.js",
+    "main.js.map": "/react-beats-music-player/static/js/main.d8fa943a.chunk.js.map",
+    "runtime-main.js": "/react-beats-music-player/static/js/runtime-main.7e479ee6.js",
+    "runtime-main.js.map": "/react-beats-music-player/static/js/runtime-main.7e479ee6.js.map",
+    "static/js/2.fc23d134.chunk.js": "/react-beats-music-player/static/js/2.fc23d134.chunk.js",
+    "static/js/2.fc23d134.chunk.js.map": "/react-beats-music-player/static/js/2.fc23d134.chunk.js.map",
+    "static/js/3.a16332b9.chunk.js": "/react-beats-music-player/static/js/3.a16332b9.chunk.js",
+    "static/js/3.a16332b9.chunk.js.map": "/react-beats-music-player/static/js/3.a16332b9.chunk.js.map",
     "index.html": "/react-beats-music-player/index.html",
     "static/css/main.2e4c8ac0.chunk.css.map": "/react-beats-music-player/static/css/main.2e4c8ac0.chunk.css.map",
-    "static/js/2.024054a7.chunk.js.LICENSE.txt": "/react-beats-music-player/static/js/2.024054a7.chunk.js.LICENSE.txt"
+    "static/js/2.fc23d134.chunk.js.LICENSE.txt": "/react-beats-music-player/static/js/2.fc23d134.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.26b909fe.js",
-    "static/js/2.024054a7.chunk.js",
+    "static/js/runtime-main.7e479ee6.js",
+    "static/js/2.fc23d134.chunk.js",
     "static/css/main.2e4c8ac0.chunk.css",
-    "static/js/main.88afef8c.chunk.js"
+    "static/js/main.d8fa943a.chunk.js"
   ]
 }
