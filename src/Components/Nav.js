@@ -1,23 +1,31 @@
-import React from "react";
+import {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMusic, l } from "@fortawesome/free-solid-svg-icons";
+import { faMusic} from "@fortawesome/free-solid-svg-icons";
+
 
 const Nav = ({ setLibraryStatus, libraryStatus }) => {
   const openLibraryHandler = () => {
     setLibraryStatus(!libraryStatus);
   };
+  const [opacity, setOpacity] = useState(1);
 
+  const wrapperfunction = () => {
+    openLibraryHandler();
+    setOpacity( opacity === 1 ? 0 : 1 );
+  }
+  
   return (
     <nav>
-      <h1>React Beats</h1>
+      <h1 className="hidden" style={{ opacity }}>React Beats</h1>
       <button
         className={libraryStatus ? "library-active" : ""}
-        onClick={openLibraryHandler}
+        onClick={wrapperfunction} 
       >
         {libraryStatus === false ? "PlayList" : "Close PlayList"  }
         {libraryStatus === false ? <FontAwesomeIcon icon={faMusic}></FontAwesomeIcon> : ""}
       </button>
     </nav>
+
   );
 };
 
